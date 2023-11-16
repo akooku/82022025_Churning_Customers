@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Churn Prediction App</h1>
+    <form action="/predict" method="post">
+
+        <!-- Personal Information -->
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <label for="tenure">Tenure:</label>
+            <input type="number" id="tenure" name="tenure" required><br>
+
+            <label for="MonthlyCharges">Monthly Charges:</label>
+            <input type="number" id="MonthlyCharges" name="MonthlyCharges" step="0.01" required><br>
+
+            <label for="TotalCharges">Total Charges:</label>
+            <input type="number" id="TotalCharges" name="TotalCharges" step="0.01" required><br>
+
+            <label for="Contract">Contract:</label>
+            <select id="Contract" name="Contract" required>
+                <option value="Month-to-month">Month-to-month</option>
+                <option value="One year">One year</option>
+                <option value="Two year">Two year</option>
+            </select><br>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+            </select><br>
+        </fieldset>
+
+        <!-- Internet and Security -->
+        <fieldset>
+            <legend>Internet and Security</legend>
+
+            <label for="OnlineSecurity">Online Security:</label>
+            <select id="OnlineSecurity" name="OnlineSecurity" required>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+                <option value="No internet service">No internet service</option>
+            </select><br>
+
+            <label for="OnlineBackup">Online Backup:</label>
+            <select id="OnlineBackup" name="OnlineBackup" required>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+                <option value="No internet service">No internet service</option>
+            </select><br>
+
+            <label for="TechSupport">Tech Support:</label>
+            <select id="TechSupport" name="TechSupport" required>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+                <option value="No internet service">No internet service</option>
+            </select><br>
+        </fieldset>
+
+        <!-- Payment Information -->
+        <fieldset>
+            <legend>Payment Information</legend>
+
+            <label for="PaymentMethod">Payment Method:</label>
+            <select id="PaymentMethod" name="PaymentMethod" required>
+                <option value="Electronic check">Electronic check</option>
+                <option value="Mailed check">Mailed check</option>
+                <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+                <option value="Credit card (automatic)">Credit card (automatic)</option>
+            </select><br>
+        </fieldset>
+
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction_text %}
+        <p>{{ prediction_text }}</p>
+    {% endif %}
+</body>
+</html>
