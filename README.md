@@ -42,6 +42,10 @@ This web application predicts customer churn using a machine learning model. It 
 3. Click the "Predict" button to get the churn prediction.
 4. The result page will display the churn prediction and the confidence level.
 
+## Video Demonstration
+
+Watch the video demonstration on [YouTube](https://youtu.be/z5VMZ0u8j7A).
+
 ## Acknowledgments
 
 This project uses Flask, a lightweight WSGI web application framework, and scikit-learn, a machine learning library for Python.
