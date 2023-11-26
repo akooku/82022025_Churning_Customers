@@ -45,3 +45,7 @@ This web application predicts customer churn using a machine learning model. It 
 ## Acknowledgments
 
 This project uses Flask, a lightweight WSGI web application framework, and scikit-learn, a machine learning library for Python.
+
+## Demo Video
+
+- [Demo Video](https://youtu.be/z5VMZ0u8j7A)
